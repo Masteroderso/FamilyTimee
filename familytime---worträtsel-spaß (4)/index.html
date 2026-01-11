@@ -1,0 +1,104 @@
+
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+    <title>IMPOSTOR - Splash Red Edition</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+      :root {
+        --app-height: 100%;
+      }
+      html, body {
+        padding: 0;
+        margin: 0;
+        height: 100vh;
+        height: -webkit-fill-available;
+        width: 100vw;
+        overflow: hidden;
+        background-color: #450a0a;
+        position: fixed;
+      }
+      body {
+        font-family: 'Inter', sans-serif;
+        color: white;
+      }
+      #root {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+      }
+      .game-font {
+        font-family: 'Luckiest Guy', cursive;
+      }
+      .bg-vibrant {
+        background: radial-gradient(circle at top left, #ef4444 0%, #991b1b 45%, #450a0a 100%);
+        position: fixed;
+        inset: 0;
+        z-index: -2;
+      }
+      /* Modern viral texture effect */
+      .bg-vibrant::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-image: url("https://www.transparenttextures.com/patterns/stardust.png");
+        opacity: 0.2;
+        mix-blend-mode: overlay;
+        z-index: -1;
+      }
+      .card-white {
+        background: white;
+        color: #1e293b;
+        border-radius: 2.5rem;
+        box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.5);
+      }
+      .btn-play {
+        background: #ffffff;
+        color: #991b1b;
+        box-shadow: 0 6px 0 #b91c1c;
+        transition: transform 0.1s ease, box-shadow 0.1s ease;
+      }
+      .btn-play:active {
+        transform: translateY(4px);
+        box-shadow: 0 2px 0 #b91c1c;
+      }
+      .custom-scrollbar::-webkit-scrollbar { width: 4px; }
+      .custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
+      .custom-scrollbar::-webkit-scrollbar-thumb { background: rgba(0,0,0,0.1); border-radius: 10px; }
+      
+      .no-select {
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        user-select: none;
+      }
+
+      /* Pulse animation for viral feel */
+      @keyframes soft-pulse {
+        0%, 100% { opacity: 0.8; transform: scale(1); }
+        50% { opacity: 1; transform: scale(1.02); }
+      }
+      .viral-pulse {
+        animation: soft-pulse 4s infinite ease-in-out;
+      }
+    </style>
+    <script type="importmap">
+    {
+      "imports": {
+        "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+        "react/": "https://esm.sh/react@^19.2.3/",
+        "react": "https://esm.sh/react@^19.2.3",
+        "@google/genai": "https://esm.sh/@google/genai@^1.35.0"
+      }
+    }
+    </script>
+  <link rel="stylesheet" href="/index.css">
+</head>
+  <body>
+    <div class="bg-vibrant"></div>
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
